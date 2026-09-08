@@ -1,0 +1,35 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
+  "name": "io.github.hiringindex/hiringindex-mcp",
+  "description": "Search live job postings, aggregate any slice of the market, and see how long each listing has been open. Four tools over one job index.",
+  "status": "active",
+  "repository": {
+    "url": "https://github.com/hiringindex/hiringindex-mcp",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "hiringindex-mcp",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "HIRINGINDEX_API_KEY",
+          "description": "API key. Also accepts RAPIDAPI_KEY.",
+          "isRequired": true,
+          "isSecret": true
+        },
+        {
+          "name": "HIRINGINDEX_API_BASE",
+          "description": "Call the backend directly instead of the marketplace.",
+          "isRequired": false,
+          "isSecret": false
+        }
+      ]
+    }
+  ]
+}
