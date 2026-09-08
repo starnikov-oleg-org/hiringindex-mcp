@@ -35,11 +35,7 @@
   },
   "homepage": "https://hiringindex.org/products/mcp-server",
   "bugs": {
-    "url": "https://github.com/starnikovoleg/hiringindex-mcp/issues"
+    "url": "https://hiringindex.org/feedback"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/starnikovoleg/hiringindex-mcp.git"
-  },
-  "author": "Oleg Starnikov"
+  "mcpName": "io.github.starnikovoleg/hiringindex-mcp"
 }

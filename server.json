@@ -1,10 +1,10 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
-  "name": "io.github.hiringindex/hiringindex-mcp",
+  "name": "io.github.starnikovoleg/hiringindex-mcp",
   "description": "Search live job postings, aggregate any slice of the market, and see how long each listing has been open. Four tools over one job index.",
   "status": "active",
   "repository": {
-    "url": "https://github.com/hiringindex/hiringindex-mcp",
+    "url": "https://github.com/starnikovoleg/hiringindex-mcp",
     "source": "github"
   },
   "version": "0.1.0",
