@@ -3,7 +3,7 @@
   "name": "io.github.starnikovoleg/hiringindex-mcp",
   "description": "Search live job postings, aggregate any market slice, and see how long each listing has been open.",
   "repository": {
-    "url": "https://github.com/starnikovoleg/hiringindex-mcp",
+    "url": "https://github.com/starnikov-oleg-org/hiringindex-mcp",
     "source": "github"
   },
   "version": "0.1.1",

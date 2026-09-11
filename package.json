@@ -19,7 +19,7 @@
   "homepage": "https://hiringindex.org/products/mcp-server",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/starnikovoleg/hiringindex-mcp.git"
+    "url": "git+https://github.com/starnikov-oleg-org/hiringindex-mcp.git"
   },
   "license": "MIT",
   "type": "module",
