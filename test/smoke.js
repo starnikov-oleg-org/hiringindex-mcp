@@ -79,6 +79,9 @@ try {
   } else {
     const noKey = await rpc('tools/call', { name: 'search_jobs', arguments: { titles: ['x'] } });
     check('без ключа — понятное сообщение', noKey.result?.isError === true && /API key/i.test(noKey.result.content[0].text));
+    check('без ключа — ссылка, где взять бесплатный ключ',
+          noKey.result?.content?.[0]?.text?.includes('rapidapi.com/starnikovoleg/api/hiringindex/pricing'),
+          noKey.result?.content?.[0]?.text?.slice(0, 200));
     console.log('  —     живые вызовы пропущены: нет HIRINGINDEX_API_KEY');
   }
 } catch (e) {

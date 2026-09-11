@@ -1,0 +1,31 @@
+# Publishes hiringindex-mcp to npm through npm trusted publishing (OIDC):
+# no npm token and no 2FA code in CI — npm trusts this workflow in this repo.
+# Trigger: push a tag v<version> that matches package.json, e.g. v0.1.1.
+# Requirements (npm docs, 2026): npm CLI >= 11.5.1, Node >= 22.14, GitHub-hosted runner.
+name: publish
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  id-token: write # OIDC token for npm trusted publishing
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org'
+      - name: npm new enough for trusted publishing
+        run: npm install -g npm@latest && npm --version
+      - name: Tag matches package.json version
+        run: test "v$(node -p "require('./package.json').version")" = "$GITHUB_REF_NAME"
+      - name: Offline tests
+        run: node --test "test/*.js"
+      - name: Publish (provenance is generated automatically)
+        run: npm publish --access public

@@ -11,6 +11,10 @@ Zero dependencies, Node ≥ 18, stdio transport.
 npx -y hiringindex-mcp
 ```
 
+**Get a key first — it is free.** The BASIC plan is $0 a month for 200 job postings and
+5 insights: subscribe at https://rapidapi.com/starnikovoleg/api/hiringindex/pricing and put
+the key in `HIRINGINDEX_API_KEY` below.
+
 Claude Desktop / Claude Code:
 
 ```json
@@ -78,7 +82,7 @@ at all: region or state, industry.
 
 | Variable | Default | Meaning |
 |---|---|---|
-| `HIRINGINDEX_API_KEY` | — | required; also accepts `RAPIDAPI_KEY` |
+| `HIRINGINDEX_API_KEY` | — | required; also accepts `RAPIDAPI_KEY`. Free BASIC plan: https://rapidapi.com/starnikovoleg/api/hiringindex/pricing |
 | `HIRINGINDEX_HOST` | `hiringindex.p.rapidapi.com` | marketplace host |
 | `HIRINGINDEX_API_BASE` | — | set this to call our backend directly instead of the marketplace |
 | `HIRINGINDEX_TIMEOUT_MS` | `30000` | request timeout |

@@ -1,20 +1,8 @@
 {
   "name": "hiringindex-mcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "mcpName": "io.github.starnikovoleg/hiringindex-mcp",
   "description": "MCP server for job market data: search live postings, get salary and demand aggregates, and see how long each listing has been open.",
-  "type": "module",
-  "bin": {
-    "hiringindex-mcp": "src/index.js"
-  },
-  "main": "src/index.js",
-  "files": [
-    "src",
-    "README.md",
-    "LICENSE"
-  ],
-  "engines": {
-    "node": ">=18"
-  },
   "keywords": [
     "mcp",
     "modelcontextprotocol",
@@ -28,14 +16,30 @@
     "ats",
     "ai-agents"
   ],
+  "homepage": "https://hiringindex.org/products/mcp-server",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/starnikovoleg/hiringindex-mcp.git"
+  },
   "license": "MIT",
+  "type": "module",
+  "bin": {
+    "hiringindex-mcp": "src/index.js"
+  },
+  "main": "src/index.js",
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "start": "node src/index.js",
     "test": "node test/smoke.js"
   },
-  "homepage": "https://hiringindex.org/products/mcp-server",
   "bugs": {
     "url": "https://hiringindex.org/feedback"
-  },
-  "mcpName": "io.github.starnikovoleg/hiringindex-mcp"
+  }
 }

@@ -1,4 +1,4 @@
-import { API_KEY, TIMEOUT_MS, assertKey, baseUrl, viaRapidApi } from './config.js';
+import { API_KEY, GET_A_KEY, TIMEOUT_MS, assertKey, baseUrl, viaRapidApi } from './config.js';
 
 // Ошибка с сохранённым кодом — агент ветвится по коду, а не по тексту.
 export class HiringIndexError extends Error {
@@ -100,7 +100,10 @@ async function call(path, { method = 'POST', body = null } = {}) {
         : res.status === 429 ? 'rate_limited'
         : res.status >= 500 ? 'upstream_error'
         : 'bad_request';
-      throw new HiringIndexError(code, `${method} ${path} -> ${res.status}: ${text.slice(0, 200)}`, res.status);
+      // 403 «You are not subscribed to this API» — ключ RapidAPI есть, подписки на HiringIndex
+      // нет: ровно тот человек, которому нужна ссылка на бесплатный план.
+      const hint = code === 'auth_failed' ? `\n${GET_A_KEY}` : '';
+      throw new HiringIndexError(code, `${method} ${path} -> ${res.status}: ${text.slice(0, 200)}${hint}`, res.status);
     }
     return text ? JSON.parse(text) : null;
   } catch (e) {
