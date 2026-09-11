@@ -16,4 +16,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-      - run: node --test "test/*.js"
+      # npm test = node test/smoke.js: работает на любой версии Node. Шаблон
+      # "test/*.js" в node --test понимается только с Node 21, и CI падал на 18/20.
+      - run: npm test

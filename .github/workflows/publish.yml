@@ -26,6 +26,6 @@ jobs:
       - name: Tag matches package.json version
         run: test "v$(node -p "require('./package.json').version")" = "$GITHUB_REF_NAME"
       - name: Offline tests
-        run: node --test "test/*.js"
+        run: npm test
       - name: Publish (provenance is generated automatically)
         run: npm publish --access public
