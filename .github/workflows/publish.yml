@@ -15,6 +15,9 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    # Environment должно совпадать с полем Environment у trusted publisher в npm
+    # (там стоит ci): оно попадает в OIDC-токен, и npm сверяет его при публикации.
+    environment: ci
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
