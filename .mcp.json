@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "hiringindex": {
+      "command": "npx",
+      "args": ["-y", "hiringindex-mcp"],
+      "env": {
+        "HIRINGINDEX_API_KEY": "${HIRINGINDEX_API_KEY}"
+      }
+    }
+  }
+}
